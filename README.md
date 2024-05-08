@@ -26,7 +26,7 @@ Instead of cloning the entire repository with its git history, you can create a 
 - **Using degit**: If you prefer not to include the original git history, you can use `degit`:
 
 ```bash
-pnpm dlx degit <your-repo-url> <your-project-name>
+pnpm dlx degit https://github.com/blazeshomida/nextjs14-starter-template <your-project-name>
 cd <your-project-name>
 pnpm install
 ```
