@@ -8,12 +8,24 @@ on:
       - main
 
 jobs:
-  pre-build-tasks:
-    name: Pre-Build Tasks
+  biome:
+    name: Run Biome CI
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        tasks: [lint, tsc]
+    steps:
+      - name: Checking out changes
+        uses: actions/checkout@v4
+        
+      - name: Setup Biome CLI
+        uses: biomejs/setup-biome@v2
+        with:
+          version: latest
+      
+      - name: Run Biome
+        run: biome ci .
+
+  types:
+    name: Check Types
+    runs-on: ubuntu-latest
     steps:
       - name: Checking out changes
         uses: actions/checkout@v4
@@ -32,13 +44,13 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: "Running: ${{ matrix.tasks }}"
-        run: pnpm ${{ matrix.tasks }}
+      - name: "Running Type Checking"
+        run: pnpm tsc
 
   build:
     name: Build
     runs-on: ubuntu-latest
-    needs: pre-build-tasks
+    needs: [biome, types]
     steps:
       - name: Checking out changes
         uses: actions/checkout@v4
