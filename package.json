@@ -17,6 +17,8 @@
     ]
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.37.1",
+    "@tanstack/react-query-devtools": "^5.37.1",
     "next": "14.2.3",
     "next-themes": "^0.3.0",
     "react": "^18",
