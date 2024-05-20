@@ -9,6 +9,8 @@ This feature-rich Next.js 14 starter template is designed to optimize developmen
 - 🌿 **[Biome](https://biomejs.dev/guides/getting-started/)**: Provides lightning-fast linting and formatting, integrated into both the pre-commit hooks and the CI pipeline to maintain code quality without compromising on speed.
 - 🐶 **[Husky](https://typicode.github.io/husky/get-started.html) and [lint-staged](https://github.com/lint-staged/lint-staged?tab=readme-ov-file#examples)**: Ensure that all committed code conforms to the formatting standards set by Biome, making pre-commit checks fast and efficient.
 - ⚙️ **Custom GitHub Actions Workflows**: Implements parallel linting, type checking, and builds to streamline CI/CD processes.
+- 🌀 **[clsx](https://github.com/lukeed/clsx)** and **[tailwind-merge](https://github.com/dcastil/tailwind-merge)**: Simplify conditional className handling and merge Tailwind CSS classes without conflicts, enhancing the development experience.
+- 🌗 **[next-themes](https://github.com/pacocoursey/next-themes)**: Manage and switch between themes (light/dark) with ease, providing a better user experience.
 
 ## 🌟 Getting Started
 
@@ -70,6 +72,17 @@ The `.github/workflows/ci.yaml` defines three main jobs:
 
 This setup ensures that all merges into the main branch are reliable and tested.
 
+### [clsx](https://github.com/lukeed/clsx) and [tailwind-merge](https://github.com/dcastil/tailwind-merge)
+
+To handle dynamic class names efficiently and avoid class conflicts, we use `clsx` for conditional className handling and `tailwind-merge` for merging Tailwind CSS classes:
+
+- `clsx`: A tiny utility for constructing `className` strings conditionally.
+- `tailwind-merge`: A utility to merge Tailwind CSS classes without conflicts, ensuring the final className string is clean and correct.
+
+### [next-themes](https://github.com/pacocoursey/next-themes)
+
+To manage and switch between light and dark themes, we use `next-themes`. The `ThemeProvider` is configured to enable theme switching with support for system preferences.
+
 ## 🔄 Continuous Integration
 
 Our CI processes are detailed and designed to catch issues early, allowing developers to focus on adding value without worrying about breaking changes.
@@ -89,3 +102,7 @@ Here are some useful resources for learning more about the technologies and tool
 - [Biome](https://biomejs.dev/guides/getting-started/)
 - [Lint-Staged](https://github.com/lint-staged/lint-staged?tab=readme-ov-file#examples)
 - [Husky](https://typicode.github.io/husky/get-started.html)
+- [clsx](https://github.com/lukeed/clsx)
+- [tailwind-merge](https://github.com/dcastil/tailwind-merge)
+- [next-themes](https://github.com/pacocoursey/next-themes)
+
