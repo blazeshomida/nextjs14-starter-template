@@ -52,20 +52,20 @@ Navigate to [http://localhost:3000](http://localhost:3000) to view your applicat
 
 ### [Biome](https://biomejs.dev/guides/getting-started/)
 
-Configured in `biome.json`, Biome handles linting and formatting with optimized settings for speed:
+Configured in [`biome.json`](./biome.json), Biome handles linting and formatting with optimized settings for speed:
 
 - **Organize Imports**: Automatically organizes imports on save.
 - **Linter and Formatter**: Ensures code consistency with minimal overhead, ignoring unnecessary files like `.vscode`, `node_modules`, and `.next`.
 
-The configuration can be adjusted according to project needs by modifying `biome.json`.
+The configuration can be adjusted according to project needs by modifying [`biome.json`](./biome.json).
 
 ### [Husky](https://typicode.github.io/husky/get-started.html) and [lint-staged](https://github.com/lint-staged/lint-staged?tab=readme-ov-file#examples)
 
-Set up in the `.husky/pre-commit` hook, this combination ensures that all staged files are automatically formatted by Biome before they are committed, keeping the codebase consistent and clean.
+Set up in the [`.husky/pre-commit`](./.husky/pre-commit) hook, this combination ensures that all staged files are automatically formatted by Biome before they are committed, keeping the codebase consistent and clean.
 
 ### CI/CD with GitHub Actions
 
-The `.github/workflows/ci.yaml` defines three main jobs:
+The [`.github/workflows/ci.yaml`](./.github/workflows/ci.yaml) defines three main jobs:
 
 - **Biome**: Runs linting and formatting checks.
 - **Check Types**: Performs TypeScript checks to ensure type safety.
@@ -80,13 +80,17 @@ To handle dynamic class names efficiently and avoid class conflicts, we use `cls
 - `clsx`: A tiny utility for constructing `className` strings conditionally.
 - `tailwind-merge`: A utility to merge Tailwind CSS classes without conflicts, ensuring the final className string is clean and correct.
 
+### [`cn` Utility Function](./src/lib/utils/cn.ts)
+
+The `cn` function combines the power of `clsx` and `tailwind-merge` to create a utility that simplifies conditional class name handling and resolves Tailwind CSS class conflicts. This function takes multiple class values, conditionally includes them using `clsx`, and merges them using `tailwind-merge` to ensure there are no conflicts.
+
 ### [next-themes](https://github.com/pacocoursey/next-themes)
 
-To manage and switch between light and dark themes, we use `next-themes`. The `ThemeProvider` is configured to enable theme switching with support for system preferences.
+To manage and switch between light and dark themes, we use `next-themes`. The [`ThemeProvider`](./src/app/_providers/ThemeProvider.tsx) is configured to enable theme switching with support for system preferences.
 
 ### [TanStack Query](https://tanstack.com/query/v5/docs/overview)
 
-To manage server-state in React applications, we use TanStack Query. This setup includes the `QueryClientProvider` and `ReactQueryDevtools` to enhance the data-fetching capabilities of your application. The `QueryClient` is configured with sensible defaults to ensure efficient data fetching and caching.
+To manage server-state in React applications, we use TanStack Query. This setup includes the [`QueryClientProvider`](./src/app/_providers/QueryProvider.tsx) and [`ReactQueryDevtools`](./src/app/_providers/QueryProvider.tsx) to enhance the data-fetching capabilities of your application. The `QueryClient` is configured with sensible defaults to ensure efficient data fetching and caching.
 
 ## 🔄 Continuous Integration
 
