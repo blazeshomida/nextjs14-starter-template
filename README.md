@@ -11,6 +11,7 @@ This feature-rich Next.js 14 starter template is designed to optimize developmen
 - ⚙️ **Custom GitHub Actions Workflows**: Implements parallel linting, type checking, and builds to streamline CI/CD processes.
 - 🌀 **[clsx](https://github.com/lukeed/clsx)** and **[tailwind-merge](https://github.com/dcastil/tailwind-merge)**: Simplify conditional className handling and merge Tailwind CSS classes without conflicts, enhancing the development experience.
 - 🌗 **[next-themes](https://github.com/pacocoursey/next-themes)**: Manage and switch between themes (light/dark) with ease, providing a better user experience.
+- ⚡ **[TanStack Query](https://tanstack.com/query/v5/docs/overview)**: Manage server-state in React applications with powerful data fetching and caching capabilities.
 
 ## 🌟 Getting Started
 
@@ -83,6 +84,10 @@ To handle dynamic class names efficiently and avoid class conflicts, we use `cls
 
 To manage and switch between light and dark themes, we use `next-themes`. The `ThemeProvider` is configured to enable theme switching with support for system preferences.
 
+### [TanStack Query](https://tanstack.com/query/v5/docs/overview)
+
+To manage server-state in React applications, we use TanStack Query. This setup includes the `QueryClientProvider` and `ReactQueryDevtools` to enhance the data-fetching capabilities of your application. The `QueryClient` is configured with sensible defaults to ensure efficient data fetching and caching.
+
 ## 🔄 Continuous Integration
 
 Our CI processes are detailed and designed to catch issues early, allowing developers to focus on adding value without worrying about breaking changes.
@@ -105,4 +110,4 @@ Here are some useful resources for learning more about the technologies and tool
 - [clsx](https://github.com/lukeed/clsx)
 - [tailwind-merge](https://github.com/dcastil/tailwind-merge)
 - [next-themes](https://github.com/pacocoursey/next-themes)
-
+- [TanStack Query](https://tanstack.com/query/v5/docs/overview)
