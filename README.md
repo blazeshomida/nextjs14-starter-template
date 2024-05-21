@@ -61,7 +61,9 @@ The configuration can be adjusted according to project needs by modifying [`biom
 
 ### [Husky](https://typicode.github.io/husky/get-started.html) and [lint-staged](https://github.com/lint-staged/lint-staged?tab=readme-ov-file#examples)
 
-Set up in the [`.husky/pre-commit`](./.husky/pre-commit) hook, this combination ensures that all staged files are automatically formatted by Biome before they are committed, keeping the codebase consistent and clean.
+Set up in the [`.husky/pre-commit`](./.husky/pre-commit) hook, this combination ensures that all staged files are automatically formatted and linted by Biome before they are committed, keeping the codebase consistent and clean. The `lint-staged` configuration runs `biome check --apply --no-errors-on-unmatched` to maintain high code quality and reduce errors during GitHub Actions runs.
+
+If pre-commit speed becomes an issue, feel free to adjust the configuration to just run formatting (`biome format --write --no-errors-on-unmatched`). The CI script will still perform full checks without applying changes, serving as a guardrail.
 
 ### CI/CD with GitHub Actions
 
